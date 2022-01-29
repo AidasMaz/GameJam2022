@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CountdownTimer : TimedFunction
 {
-	[SerializeField]
-	private Text countdownText;
+	// [SerializeField]
+	// private Text countdownText;
 	[SerializeField]
 	private float startTime = 60;
 	private float periodLength;
@@ -25,7 +25,8 @@ public class CountdownTimer : TimedFunction
 		if (currentTime < periodLength)
 			return;
 		currentTime -= periodLength;
-		countdownText.text = currentTime.ToString();
+		// countdownText.text = currentTime.ToString();
+		// Debug.Log("Countdown: " + currentTime.ToString());
 
 		if (currentTime <= 0)
 		{
