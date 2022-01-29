@@ -87,6 +87,10 @@ public class UIController : MonoBehaviour
             StartCoroutine(FadeInBlackToGameplayIntro());
         }
     }
+    //public void LeaveGame()
+    //{
+    //    SetState(GameState.StartScreen);
+    //}
 
     void Update()
     {

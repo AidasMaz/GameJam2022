@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameplayUIController : MonoBehaviour
 {
@@ -12,22 +13,44 @@ public class GameplayUIController : MonoBehaviour
     [SerializeField] private Sprite playerAliveSprite;
     [SerializeField] private Sprite playerParasiteSprite;
     [Space]
+    [SerializeField] private Image[] playerLeftHealthImages;
+    [SerializeField] private Image[] playerRightHealthImages;
+    [Space]
     [SerializeField] private Image powerLeftIndicationImage;
     [SerializeField] private Image powerRightIndicationImage;
+    [Space]
+    [SerializeField] private TextMeshProUGUI timerText;
 
-    //[Header("Bottom UI")]
+    [Header("Bottom UI")] // jei noresim vietoj timerio ar kaip tasku pasiskiartyam rodyti su bar
+    [SerializeField] private Image progressImage;
+
+    [Header("Variables")]
+    private bool parasiteLeft;
 
     // -------------------------------------------------
 
     public void Initialize()
     {
-        SetTopUI(true);
+        parasiteLeft = true;
+
+        SetTopUI(parasiteLeft);
+
+        SetBottomUI();
     }
 
     public void SetTopUI(bool parasiteLeft)
     {
+        for (int i = 0; i < 3; i++)
+        {
+            playerLeftHealthImages[i].gameObject.SetActive(true);
+            playerRightHealthImages[i].gameObject.SetActive(true);
+        }
+
+        timerText.text = "60:00";
+
         if (parasiteLeft)
         {
+            // uzkomentuota, kol nera assetu
             //playerLeftImage.sprite = playerParasiteSprite;
             //playerRightImage.sprite = playerAliveSprite;
 
@@ -36,11 +59,26 @@ public class GameplayUIController : MonoBehaviour
         }
         else
         {
+            // uzkomentuota, kol nera assetu
             //playerLeftImage.sprite = playerAliveSprite;
             //playerRightImage.sprite = playerParasiteSprite;
 
             powerLeftIndicationImage.gameObject.SetActive(true);
             powerRightIndicationImage.gameObject.SetActive(false);
         }
+    }
+
+    public void SetBottomUI()
+    {
+        // jei noresim vietoj timerio ar kaip tasku pasiskiartyam rodyti su bar
+    }
+
+    public void SwitchUI()
+    {
+        parasiteLeft = !parasiteLeft;
+
+        SetTopUI(parasiteLeft);
+
+        SetBottomUI();
     }
 }

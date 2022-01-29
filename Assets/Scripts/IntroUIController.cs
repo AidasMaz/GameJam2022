@@ -59,7 +59,7 @@ public class IntroUIController : MonoBehaviour
                             Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
                             leftPlayer.color = new Color(255, 255, 255, 255);
-                            checkText.text = "Parasite, press W, A, S or D";
+                            checkText.text = "Player2 press Up/Down/Left/Right";
                             checkState = CheckState.WaitingRight;
                         }
                         break;
@@ -69,7 +69,7 @@ public class IntroUIController : MonoBehaviour
                             Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
                         {
                             rightPlayer.color = new Color(255, 255, 255, 255);
-                            checkText.text = "Both players are ready!";
+                            checkText.text = "Both players are ready";
                             checkState = CheckState.BothChecked;
                         }
                         break;
