@@ -2,37 +2,148 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class IntroUIController : MonoBehaviour
 {
-    [Header("Intro objects")]
-    [SerializeField] private Image FadeImage;
+    [Header("Images")]
+    [SerializeField] private Image fadeImage;
     [Space]
-    [SerializeField] private Image IntroImage;
+    [SerializeField] private Image introImage;
+    [Space]
+    [SerializeField] private Image controllsImage;
+
+    [Header("Checking")]
+    [SerializeField] private TextMeshProUGUI checkText;
+    [Space]
+    [SerializeField] private Image leftPlayer;
+    [SerializeField] private Image rightPlayer;
 
     [Header("Variables")]
     [SerializeField] private float fadeTime;
     [SerializeField] private float showTime;
 
-    public bool finishedIntro;
+    [Header("State")]
+    public IntroState introState;
+    [Space]
+    public CheckState checkState;
+
+    // -------------------------------------------------
 
     public void Initialize()
     {
-        finishedIntro = false;
+        fadeImage.gameObject.SetActive(true);
+        introImage.gameObject.SetActive(true);
+        controllsImage.gameObject.SetActive(true);
 
-        FadeImage.gameObject.SetActive(true);
-        IntroImage.gameObject.SetActive(true);
+        SetState(IntroState.Black);
 
-        StartCoroutine(HandleIntroAnimations());
+        checkState = CheckState.WaitingLeft;
     }
 
-    IEnumerator HandleIntroAnimations()
+    private void Update()
     {
-        FadeImage.CrossFadeAlpha(0.0f, fadeTime, false);
+        switch (introState)
+        {
+            case IntroState.Black:
+                break;
 
-        yield return new WaitForSeconds(fadeTime + showTime);
+            case IntroState.Image:
+                break;
 
-        IntroImage.gameObject.SetActive(false);
-        finishedIntro = true;
+            case IntroState.WaitingForInputs:
+                switch (checkState)
+                {
+                    case CheckState.WaitingLeft:
+                        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow) || 
+                            Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+                        {
+                            leftPlayer.color = new Color(255, 255, 255, 255);
+                            checkText.text = "Parasite, press W, A, S or D";
+                            checkState = CheckState.WaitingRight;
+                        }
+                        break;
+
+                    case CheckState.WaitingRight:
+                        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
+                            Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                        {
+                            rightPlayer.color = new Color(255, 255, 255, 255);
+                            checkText.text = "Both players are ready!";
+                            checkState = CheckState.BothChecked;
+                        }
+                        break;
+
+                    case CheckState.BothChecked:
+                        StartCoroutine(SetStateEnded());
+                        break;
+                }
+                break;
+
+            case IntroState.Ended:
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void SetState(IntroState state)
+    {
+        introState = state;
+
+        switch (introState)
+        {
+            case IntroState.Black:
+                StartCoroutine(FadeOutBlack());
+                break;
+
+            case IntroState.Image:
+                StartCoroutine(ShowImageForTime());
+                break;
+
+            case IntroState.WaitingForInputs:
+
+                break;
+
+            case IntroState.Ended:
+
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    IEnumerator FadeOutBlack()
+    {
+        yield return new WaitForSeconds(fadeTime + 0.1f);
+        fadeImage.CrossFadeAlpha(0.0f, fadeTime, false);
+        yield return new WaitForSeconds(fadeTime);
+        SetState(IntroState.Image);
+    }
+
+    IEnumerator ShowImageForTime()
+    {
+        yield return new WaitForSeconds(showTime);
+
+        fadeImage.CrossFadeAlpha(1.0f, fadeTime, false);
+        yield return new WaitForSeconds(fadeTime + 0.1f);
+        introImage.gameObject.SetActive(false);
+        fadeImage.CrossFadeAlpha(0.0f, fadeTime, false);
+        yield return new WaitForSeconds(fadeTime);
+        
+        SetState(IntroState.WaitingForInputs);
+    }
+
+    IEnumerator SetStateEnded()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        fadeImage.CrossFadeAlpha(1.0f, fadeTime, false);
+        yield return new WaitForSeconds(fadeTime + 0.1f);
+        controllsImage.gameObject.SetActive(false);
+
+        introState = IntroState.Ended;
     }
 }

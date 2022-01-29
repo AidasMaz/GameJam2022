@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    [Header("Black object")]
+    [SerializeField] private Image blackImage;
+
     [Header("Intro objects")]
     [SerializeField] private GameObject introPanelObj;
 
@@ -27,15 +30,20 @@ public class UIController : MonoBehaviour
 
     // -------------------------------------------------
 
+    private void Start()
+    {
+        Initialize();
+    }
+
     public void Initialize()
     {
-        introPanelObj.SetActive(true);
+        startUIPanelObj.SetActive(true);
 
-        startUIPanelObj.SetActive(false);
+        introPanelObj.SetActive(false);
         endUIPanelObj.SetActive(false);
         gameplayUIPanelObj.SetActive(false);
 
-        SetState(GameState.Intro);
+        SetState(GameState.BlackFade);
     }
 
     private void SetState(GameState state)
@@ -44,22 +52,27 @@ public class UIController : MonoBehaviour
 
         switch (gameState)
         {
-            case GameState.Intro:
+            case GameState.BlackFade:
+                StartCoroutine(FadeOutBlack());
+                break;
+
+            case GameState.StartScreen:
+                break;
+
+            case GameState.GameplayIntro:
+                startUIPanelObj.SetActive(false);
                 introPanelObj.SetActive(true);
                 introUIController.Initialize();
                 break;
 
-            case GameState.StartScreen:
+            case GameState.Gameplay:
+                StartCoroutine(FadeOutBlackToGameplay());
                 introPanelObj.SetActive(false);
-                startUIPanelObj.SetActive(true);
-                break;
-
-            case GameState.GamePlay:
                 gameplayUIPanelObj.SetActive(true);
                 break;
 
             case GameState.EndScreen:
-                startUIPanelObj.SetActive(true);
+
                 break;
 
             default:
@@ -71,7 +84,7 @@ public class UIController : MonoBehaviour
     {
         if (gameState == GameState.StartScreen)
         {
-            SetState(GameState.GamePlay);
+            StartCoroutine(FadeInBlackToGameplayIntro());
         }
     }
 
@@ -79,20 +92,55 @@ public class UIController : MonoBehaviour
     {
         switch (gameState)
         {
-            case GameState.Intro:
-                if (introUIController.finishedIntro)
-                {
-                    SetState(GameState.StartScreen);
-                }
+            case GameState.BlackFade:
                 break;
+
             case GameState.StartScreen:
                 break;
-            case GameState.GamePlay:
+
+            case GameState.GameplayIntro:
+                if (introUIController.introState == IntroState.Ended)
+                {
+                    SetState(GameState.Gameplay);
+                }
                 break;
+
+            case GameState.Gameplay:
+                break;
+
             case GameState.EndScreen:
                 break;
+
             default:
                 break;
         }
+    }
+
+    IEnumerator FadeOutBlack()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        blackImage.CrossFadeAlpha(0.0f, 1.0f, false);
+
+        yield return new WaitForSeconds(1.0f);
+
+        SetState(GameState.StartScreen);
+    }
+    IEnumerator FadeInBlackToGameplayIntro()
+    {
+        blackImage.CrossFadeAlpha(1.0f, 1.0f, false);
+
+        yield return new WaitForSeconds(1.0f);
+
+        blackImage.gameObject.SetActive(false);
+        SetState(GameState.GameplayIntro);
+    }
+    IEnumerator FadeOutBlackToGameplay()
+    {
+        blackImage.gameObject.SetActive(true);
+        blackImage.CrossFadeAlpha(1.0f, 0.0f, false);
+        blackImage.CrossFadeAlpha(0.0f, 1.0f, false);
+        yield return new WaitForSeconds(1.0f);
+        blackImage.gameObject.SetActive(false);
     }
 }

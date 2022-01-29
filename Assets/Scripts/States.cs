@@ -4,8 +4,24 @@ using UnityEngine;
 
 public enum GameState
 {
-    Intro,
+    BlackFade,
     StartScreen,
-    GamePlay,
+    GameplayIntro,
+    Gameplay,
     EndScreen
+}
+
+public enum IntroState
+{
+    Black,
+    Image,
+    WaitingForInputs,
+    Ended
+}
+
+public enum CheckState
+{
+    WaitingLeft,
+    WaitingRight,
+    BothChecked
 }
