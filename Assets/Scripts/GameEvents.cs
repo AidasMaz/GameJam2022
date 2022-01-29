@@ -12,6 +12,9 @@ public class GameEvents : MonoBehaviour
 		{
 			gameManager.SwitchPlayers();
 		}
+
+		FindObjectOfType<ScoreCounter>().FlipIsPlayer1();
+
 		timer.ResetCurrentTime();
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-	public float periodLength = 1f;
+	public static float periodLength = 1f;
 	[SerializeField]
 	private List<TimedFunction> timedFunctions;
 	void Start()

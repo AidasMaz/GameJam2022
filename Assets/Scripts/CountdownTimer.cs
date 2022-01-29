@@ -15,10 +15,9 @@ public class CountdownTimer : TimedFunction
 	// Start is called before the first frame update
 	void Start()
 	{
-		Timer targeting = GetComponent<Timer>();
-		periodLength = targeting.periodLength;
+		periodLength = Timer.periodLength;
 
-		ResetCurrentTime();
+		currentTime = startTime + periodLength;
 	}
 
 	public override void Execute()
@@ -36,6 +35,6 @@ public class CountdownTimer : TimedFunction
 
 	public void ResetCurrentTime()
 	{
-		currentTime = startTime + periodLength;
+		currentTime = startTime;
 	}
 }
