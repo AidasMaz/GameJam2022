@@ -13,8 +13,18 @@ public class GameEvents : MonoBehaviour
 			gameManager.SwitchPlayers();
 		}
 
+		FindObjectOfType<HealthController>().DecreaseHealth();
 		FindObjectOfType<ScoreCounter>().FlipIsPlayer1();
 
 		timer.ResetCurrentTime();
+	}
+
+	public static void OnPlayersHealthDepleted()
+	{
+		FindObjectOfType<Timer>().SetShouldLoop(false);
+		var scoreCounter = FindObjectOfType<ScoreCounter>();
+		Debug.Log("Game finished");
+		Debug.Log("Player1 Score: " + scoreCounter.player1Score);
+		Debug.Log("Player2 Score: " + scoreCounter.player2Score);
 	}
 }
