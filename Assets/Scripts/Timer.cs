@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
 	private List<TimedFunction> timedFunctions;
 	void Start()
 	{
-		StartCoroutine("StartTimedFunctions");
+		StartCoroutine(StartTimedFunctions());
 	}
 
 	IEnumerator StartTimedFunctions()
