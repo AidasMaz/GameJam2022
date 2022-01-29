@@ -1,17 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Controllers")]
+    [SerializeField] private UIController uiController;
+    // sound controller
+    // players controller
+    // timer controller
+
+    // -------------------------------------------------
+
+    private void Start()
     {
-        
+        uiController.Initialize();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
+    {
+        uiController.StartGame();
+    }
+
+    public void SwitchPlayers()
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    private void Update()
     {
         
     }

@@ -64,3 +64,5 @@ crashlytics-build.properties
 # Import
 [Ii]mport*/
 [Ii]mport*.meta
+
+.csconfig
