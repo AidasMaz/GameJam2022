@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CountdownTimer : TimedFunction
 {
-	// [SerializeField]
-	// private Text countdownText;
+	[SerializeField]
+	private TextMeshProUGUI countdownText;
 	[SerializeField]
 	private float startTime = 60;
 	private float periodLength;
@@ -25,12 +26,12 @@ public class CountdownTimer : TimedFunction
 		if (currentTime < periodLength)
 			return;
 		currentTime -= periodLength;
-		// countdownText.text = currentTime.ToString();
+		countdownText.text = currentTime.ToString();
 		// Debug.Log("Countdown: " + currentTime.ToString());
 
 		if (currentTime <= 0)
 		{
-			GameEvents.OnCountdownTimerEnded(this);
+			GameEvents.OnRoundEnded();
 		}
 	}
 

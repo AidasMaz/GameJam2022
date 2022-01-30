@@ -56,13 +56,13 @@ MonoBehaviour:
   playerAliveSprite: {fileID: 0}
   playerParasiteSprite: {fileID: 0}
   playerLeftHealthImages:
-  - {fileID: 8504806394941528092}
-  - {fileID: 7067072657550722842}
   - {fileID: 5592910105156155969}
+  - {fileID: 7067072657550722842}
+  - {fileID: 8504806394941528092}
   playerRightHealthImages:
+  - {fileID: 6783291351975876453}
   - {fileID: 6462563660927082809}
   - {fileID: 5456899808142954666}
-  - {fileID: 6783291351975876453}
   powerLeftIndicationImage: {fileID: 1344683913252542179}
   powerRightIndicationImage: {fileID: 8249417774968604435}
   timerText: {fileID: 7984099355482864192}
@@ -2175,6 +2175,7 @@ GameObject:
   - component: {fileID: 3867930933562429887}
   - component: {fileID: 5350605273260986456}
   - component: {fileID: 7984099355482864192}
+  - component: {fileID: 893173600}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2298,6 +2299,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &893173600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752658759200385703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f42d35bfcd019945a3ab6be49353484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownText: {fileID: 7984099355482864192}
+  startTime: 10
 --- !u!1 &3965076066696084834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,6 +2994,7 @@ GameObject:
   - component: {fileID: 1577125124698068544}
   - component: {fileID: 1924968215945133295}
   - component: {fileID: 582442983608738780}
+  - component: {fileID: 107568351}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3089,6 +3105,22 @@ MonoBehaviour:
   endUIPanelObj: {fileID: 1760265690716057873}
   gameplayUIPanelObj: {fileID: 11311452217681822}
   introUIController: {fileID: 1620791470980178360}
+  timer: {fileID: 107568351}
+--- !u!114 &107568351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892439984165423072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e368b429e98154ebcdd5ce89271ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timedFunctions:
+  - {fileID: 893173600}
+  - {fileID: 120094030}
 --- !u!1 &5087120238690076462
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,6 +3837,8 @@ GameObject:
   - component: {fileID: 8375546485015640088}
   - component: {fileID: 1196783335111903622}
   - component: {fileID: 1241444543401993531}
+  - component: {fileID: 120094029}
+  - component: {fileID: 120094030}
   m_Layer: 5
   m_Name: Top UI
   m_TagString: Untagged
@@ -3872,6 +3906,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &120094029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931023812346006866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eebeb52cdfd8f74cb88464ae3da7cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLife: 3
+  uIController: {fileID: 8324425719265601662}
+--- !u!114 &120094030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931023812346006866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024f23711ad8496439928673448fe40b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7094695719039695976
 GameObject:
   m_ObjectHideFlags: 0

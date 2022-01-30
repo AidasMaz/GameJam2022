@@ -8,11 +8,7 @@ public class Timer : MonoBehaviour
 	[SerializeField]
 	private List<TimedFunction> timedFunctions;
 
-	private bool shouldLoop = true;
-	void Start()
-	{
-		StartCoroutine(StartTimedFunctions());
-	}
+	private bool shouldLoop = false;
 
 	IEnumerator StartTimedFunctions()
 	{
@@ -27,5 +23,9 @@ public class Timer : MonoBehaviour
 	public void SetShouldLoop(bool value)
 	{
 		shouldLoop = value;
+		if (shouldLoop)
+		{
+			StartCoroutine(StartTimedFunctions());
+		}
 	}
 }

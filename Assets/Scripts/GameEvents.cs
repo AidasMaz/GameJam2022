@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameEvents : MonoBehaviour
 {
-	public static void OnCountdownTimerEnded(CountdownTimer timer)
+	public static void OnRoundEnded()
 	{
 		// TODO: Add more game logic
 		var gameManager = FindObjectOfType<GameManager>();
@@ -16,7 +16,7 @@ public class GameEvents : MonoBehaviour
 		FindObjectOfType<HealthController>().DecreaseHealth();
 		FindObjectOfType<ScoreCounter>().FlipIsPlayer1();
 
-		timer.ResetCurrentTime();
+		FindObjectOfType<CountdownTimer>().ResetCurrentTime();
 	}
 
 	public static void OnPlayersHealthDepleted()

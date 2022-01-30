@@ -6,6 +6,7 @@ public class HealthController : MonoBehaviour
 {
 	[SerializeField]
 	private int startingLife = 3;
+	[SerializeField] GameplayUIController uIController;
 	public int currentPlayer1HP { get; private set; }
 	public int currentPlayer2HP { get; private set; }
 
@@ -29,7 +30,8 @@ public class HealthController : MonoBehaviour
 		{
 			currentPlayer2HP--;
 		}
-		Debug.Log("Player1 HP: " + currentPlayer1HP + " Player2 HP: " + currentPlayer2HP);
+		uIController.UpdateHealthImages(currentPlayer1HP, currentPlayer2HP);
+		// Debug.Log("Player1 HP: " + currentPlayer1HP + " Player2 HP: " + currentPlayer2HP);
 		if (currentPlayer1HP == 0 && currentPlayer2HP == 0)
 		{
 			GameEvents.OnPlayersHealthDepleted();
