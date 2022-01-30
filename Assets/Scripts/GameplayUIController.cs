@@ -56,20 +56,20 @@ public class GameplayUIController : MonoBehaviour
 
 		if (parasiteLeft)
 		{
-			// uzkomentuota, kol nera assetu
-			//playerLeftImage.sprite = playerParasiteSprite;
-			//playerRightImage.sprite = playerAliveSprite;
+            // uzkomentuota, kol nera assetu
+            playerLeftImage.sprite = playerParasiteSprite;
+            playerRightImage.sprite = playerAliveSprite;
 
-			powerLeftIndicationImage.gameObject.SetActive(false);
+            powerLeftIndicationImage.gameObject.SetActive(false);
 			powerRightIndicationImage.gameObject.SetActive(true);
 		}
 		else
 		{
-			// uzkomentuota, kol nera assetu
-			//playerLeftImage.sprite = playerAliveSprite;
-			//playerRightImage.sprite = playerParasiteSprite;
+            // uzkomentuota, kol nera assetu
+            playerLeftImage.sprite = playerAliveSprite;
+            playerRightImage.sprite = playerParasiteSprite;
 
-			powerLeftIndicationImage.gameObject.SetActive(true);
+            powerLeftIndicationImage.gameObject.SetActive(true);
 			powerRightIndicationImage.gameObject.SetActive(false);
 		}
 	}
@@ -101,13 +101,13 @@ public class GameplayUIController : MonoBehaviour
 	{
 		if (parasiteLeft)
 		{
-			//playerChangeLeftImage.sprite = playerParasiteSprite;
-			//playerChangeRightImage.sprite = playerAliveSprite;
-		}
-		else
-		{
-			//playerChangeLeftImage.sprite = playerAliveSprite;
-			//playerChangeRightImage.sprite = playerParasiteSprite;
-		}
+            playerChangeLeftImage.sprite = playerParasiteSprite;
+            playerChangeRightImage.sprite = playerAliveSprite;
+        }
+        else
+        {
+            playerChangeLeftImage.sprite = playerAliveSprite;
+            playerChangeRightImage.sprite = playerParasiteSprite;
+        }
 	}
 }

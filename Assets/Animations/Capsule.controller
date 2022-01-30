@@ -38,7 +38,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -8492186557224786989}
-    m_Position: {x: 850, y: 10, z: 0}
+    m_Position: {x: 840, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4946340511220366103}
     m_Position: {x: 390, y: 20, z: 0}
@@ -50,7 +50,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 370, y: 380, z: 0}
   m_ExitPosition: {x: 860, y: 370, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_ParentStateMachinePosition: {x: 840, y: 80, z: 0}
   m_DefaultState: {fileID: -4946340511220366103}
 --- !u!206 &-6145475263152669822
 BlendTree:

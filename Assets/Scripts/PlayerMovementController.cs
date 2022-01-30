@@ -20,6 +20,9 @@ public class PlayerMovementController : MonoBehaviour
     MovePlayer movement;
     public Animator animator;
 
+    public RuntimeAnimatorController healthyAnim;
+    public RuntimeAnimatorController coruptedAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +30,12 @@ public class PlayerMovementController : MonoBehaviour
         if (type.Equals(CharacterType.HEALTHY))
         {
             movement = GetHealthyPlayerMovement;
+            animator.runtimeAnimatorController = healthyAnim;
         }
         else
         {
             movement = GetCorruptPlayerMovement;
+            animator.runtimeAnimatorController = coruptedAnim;
         }
     }
 
