@@ -5,17 +5,14 @@ using UnityEngine;
 public class BlcokadesCreateScript : MonoBehaviour
 {
     public GameObject prefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public AudioSource audio;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
+            audio.Play();
             Vector2 pos = transform.position;
             Quaternion rot = Quaternion.identity;
             Instantiate(prefab, pos, rot);

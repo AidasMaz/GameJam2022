@@ -320,14 +320,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3022116111076972713, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: healthyAnim
-      value: 
-      objectReference: {fileID: 9100000, guid: 9ef30da7dc8b4ad4592aa12869fcb306, type: 2}
-    - target: {fileID: 3022116111076972713, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: coruptedAnim
-      value: 
-      objectReference: {fileID: 9100000, guid: 5adb6c29482c5cb408aeba3835e474b6, type: 2}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -372,17 +364,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3022116111076972715, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972716, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_Name
       value: Player1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022116111076972716, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: m_TagString
-      value: Healthy
       objectReference: {fileID: 0}
     - target: {fileID: 5733766781139392760, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: spawnPoint
