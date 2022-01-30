@@ -189,6 +189,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &327656515 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1153985576483335442, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
+  m_PrefabInstance: {fileID: 9114552408820568827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,8 +344,39 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Corrupted
       objectReference: {fileID: 0}
+    - target: {fileID: 5733766781139392760, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 614864285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
+--- !u!4 &614864285 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6794453782869091961, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
+  m_PrefabInstance: {fileID: 9114552408820568827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &896780024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5733766781139392760, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
+  m_PrefabInstance: {fileID: 1876738273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49a5a2672157964d9a1c3f83acb0e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1133488369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5733766781139392760, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
+  m_PrefabInstance: {fileID: 608122463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49a5a2672157964d9a1c3f83acb0e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1469375895 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 582442983608738780, guid: 77c4dee9f3a3ef84d9b18f24469173c2, type: 3}
@@ -415,6 +451,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Healthy
       objectReference: {fileID: 0}
+    - target: {fileID: 5733766781139392760, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 327656515}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
 --- !u!1 &1950642921
@@ -468,6 +508,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 582442983608738780, guid: 77c4dee9f3a3ef84d9b18f24469173c2, type: 3}
+      propertyPath: player1Spawn
+      value: 
+      objectReference: {fileID: 896780024}
+    - target: {fileID: 582442983608738780, guid: 77c4dee9f3a3ef84d9b18f24469173c2, type: 3}
+      propertyPath: player2Spawn
+      value: 
+      objectReference: {fileID: 1133488369}
     - target: {fileID: 3268717766295699234, guid: 77c4dee9f3a3ef84d9b18f24469173c2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -573,26 +621,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3443998715628231171, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[2].m_Data
-      value: 
-      objectReference: {fileID: 21300000, guid: 64a2dd99f1068bb47ab4db86bc800b60, type: 3}
-    - target: {fileID: 3443998715628231171, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[3].m_Data
-      value: 
-      objectReference: {fileID: 21300000, guid: 29a6a64a915acdd45b622c51db6f20cb, type: 3}
-    - target: {fileID: 3443998715628231171, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[2].m_RefCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443998715628231171, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[3].m_RefCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443998715628231171, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
-      propertyPath: m_Tiles.Array.data[363].second.m_TileSpriteIndex
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 9114552407346118785, guid: 68608814b1a5cd040ac9775152658eb1, type: 3}
       propertyPath: m_Name
       value: Grid

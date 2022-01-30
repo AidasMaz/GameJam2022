@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3022116111076972709}
   - component: {fileID: 8220970707357796930}
   - component: {fileID: 7209000136257317714}
+  - component: {fileID: 5733766781139392760}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -185,3 +186,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.5}
   serializedVersion: 2
   m_Radius: 0.55
+--- !u!114 &5733766781139392760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022116111076972716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49a5a2672157964d9a1c3f83acb0e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
