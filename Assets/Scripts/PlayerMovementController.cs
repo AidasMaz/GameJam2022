@@ -91,6 +91,19 @@ public class PlayerMovementController : MonoBehaviour
         return new Vector2(horizAxis, vertAxis);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag=="Slohodown")
+        {
+            MovementSpeed = 2f;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        MovementSpeed = 5f;
+    }
+
     void SetSpeeds(float horizontal,float vertical)
     {
         animator.SetFloat("Horizontal", horizontal);
