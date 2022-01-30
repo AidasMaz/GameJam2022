@@ -55,8 +55,9 @@ public class IntroUIController : MonoBehaviour
                 switch (checkState)
                 {
                     case CheckState.WaitingLeft:
-                        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow) || 
-                            Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+
+                        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
+                        Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
                         {
                             leftPlayer.color = new Color(255, 255, 255, 255);
                             checkText.text = "Player2 press Up/Down/Left/Right";
@@ -65,8 +66,8 @@ public class IntroUIController : MonoBehaviour
                         break;
 
                     case CheckState.WaitingRight:
-                        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
-                            Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow) ||
+                            Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
                             rightPlayer.color = new Color(255, 255, 255, 255);
                             checkText.text = "Both players are ready";
@@ -132,7 +133,7 @@ public class IntroUIController : MonoBehaviour
         introImage.gameObject.SetActive(false);
         fadeImage.CrossFadeAlpha(0.0f, fadeTime, false);
         yield return new WaitForSeconds(fadeTime);
-        
+
         SetState(IntroState.WaitingForInputs);
     }
 
