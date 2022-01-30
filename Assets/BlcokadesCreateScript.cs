@@ -8,9 +8,11 @@ public class BlcokadesCreateScript : MonoBehaviour
 
     public AudioSource audio;
 
+    public PlayerMovementController playerMovementController;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && playerMovementController.type == CharacterType.HEALTHY)
         {
             audio.Play();
             Vector2 pos = transform.position;

@@ -12,7 +12,7 @@ public enum CharacterType
 public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField]
-    private CharacterType type;
+    public CharacterType type;
     [SerializeField]
     private float MovementSpeed = 5f;
     public Rigidbody2D rigidbody;

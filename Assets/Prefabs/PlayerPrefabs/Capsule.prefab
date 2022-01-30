@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5733766781139392760}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Healthy
+  m_TagString: Corrupted
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0589a753227101b4f90052ad181eb389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   MovementSpeed: 3.4
   rigidbody: {fileID: 3022116111076972711}
   animator: {fileID: 3022116111076972712}
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8535846995005730041, guid: 6ab05e7eabedb0d4ba945c771eeec87c, type: 3}
   audio: {fileID: 6611558606982911967}
+  playerMovementController: {fileID: 3022116111076972713}
 --- !u!114 &8220970707357796930
 MonoBehaviour:
   m_ObjectHideFlags: 0

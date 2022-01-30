@@ -201,29 +201,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3022116111076972713, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022116111076972713, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: healthyAnim
-      value: 
-      objectReference: {fileID: 9100000, guid: 9ef30da7dc8b4ad4592aa12869fcb306, type: 2}
-    - target: {fileID: 3022116111076972713, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: coruptedAnim
-      value: 
-      objectReference: {fileID: 9100000, guid: 5adb6c29482c5cb408aeba3835e474b6, type: 2}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.67
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: -3.37
       objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -257,17 +245,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3022116111076972715, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972716, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_Name
       value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022116111076972716, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
-      propertyPath: m_TagString
-      value: Corrupted
       objectReference: {fileID: 0}
     - target: {fileID: 5733766781139392760, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: spawnPoint
@@ -320,17 +300,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3022116111076972713, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022116111076972713, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
+      propertyPath: MovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.89
+      value: -6.74
       objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.28
+      value: -3.57
       objectReference: {fileID: 0}
     - target: {fileID: 3022116111076972714, guid: 8ace6decae01fd84483a4b7d6ec3a9f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -580,11 +568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3928625085954980147, guid: 77c4dee9f3a3ef84d9b18f24469173c2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -589.68
+      value: 374
       objectReference: {fileID: 0}
     - target: {fileID: 3928625085954980147, guid: 77c4dee9f3a3ef84d9b18f24469173c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 401.03
+      value: -65.492
       objectReference: {fileID: 0}
     - target: {fileID: 4632396816816155750, guid: 77c4dee9f3a3ef84d9b18f24469173c2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
