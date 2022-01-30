@@ -21,8 +21,14 @@ public class GameplayUIController : MonoBehaviour
     [Space]
     [SerializeField] private TextMeshProUGUI timerText;
 
-    [Header("Bottom UI")] // jei noresim vietoj timerio ar kaip tasku pasiskiartyam rodyti su bar
-    [SerializeField] private Image progressImage;
+    // jei noresim vietoj timerio ar kaip tasku pasiskiartyam rodyti su bar
+    //[SerializeField] private Image progressImage;
+
+    [Header("Round Change objs")]
+    [SerializeField] private GameObject RoundChangeObj;
+    [Space]
+    [SerializeField] private Image playerChangeLeftImage;
+    [SerializeField] private Image playerChangeRightImage;
 
     [Header("Variables")]
     private bool parasiteLeft;
@@ -80,5 +86,19 @@ public class GameplayUIController : MonoBehaviour
         SetTopUI(parasiteLeft);
 
         SetBottomUI();
+    }
+
+    public void ShowRoundChange(bool parasiteLeft)
+    {
+        if (parasiteLeft)
+        {
+            //playerChangeLeftImage.sprite = playerParasiteSprite;
+            //playerChangeRightImage.sprite = playerAliveSprite;
+        }
+        else
+        {
+            //playerChangeLeftImage.sprite = playerAliveSprite;
+            //playerChangeRightImage.sprite = playerParasiteSprite;
+        }
     }
 }
