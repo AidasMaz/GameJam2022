@@ -2,36 +2,38 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Controllers")]
-    [SerializeField] private UIController uiController;
-    // sound controller
-    // players controller
-    // timer controller
+	[Header("Controllers")]
+	[SerializeField] private UIController uiController;
 
-    // -------------------------------------------------
+	// sound controller
+	// players controller
+	// timer controller
 
-    private void Start()
-    {
-        uiController.Initialize();
-    }
+	// -------------------------------------------------
 
-    public void StartGame()
-    {
-        uiController.StartGame();
-    }
+	private void Start()
+	{
+		uiController.Initialize();
+	}
 
-    public void SwitchPlayers()
-    {
+	public void StartGame()
+	{
+		uiController.StartGame();
+	}
 
-    }
+	public void SwitchPlayers()
+	{
+		uiController.RespawnPlayers();
+		// Switch roles		
+	}
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
 
-    private void Update()
-    {
-        
-    }
+	private void Update()
+	{
+
+	}
 }

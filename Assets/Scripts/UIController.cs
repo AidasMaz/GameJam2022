@@ -28,6 +28,10 @@ public class UIController : MonoBehaviour
 	//[SerializeField] private GameplayUIController gameplayUIController;
 	//[SerializeField] private endUIController endUIController;
 
+	[Header("Spawn Points")]
+	[SerializeField] private SpawnPoint player1Spawn;
+	[SerializeField] private SpawnPoint player2Spawn;
+
 	[Header("Timers")]
 	[SerializeField] private Timer timer;
 	// -------------------------------------------------
@@ -122,6 +126,12 @@ public class UIController : MonoBehaviour
 		}
 	}
 
+	public void RespawnPlayers()
+	{
+		player1Spawn.Respawn();
+		player2Spawn.Respawn();
+	}
+
 	IEnumerator FadeOutBlack()
 	{
 		yield return new WaitForSeconds(1.0f);
@@ -143,6 +153,7 @@ public class UIController : MonoBehaviour
 	}
 	IEnumerator FadeOutBlackToGameplay()
 	{
+		RespawnPlayers();
 		blackImage.gameObject.SetActive(true);
 		blackImage.CrossFadeAlpha(1.0f, 0.0f, false);
 		blackImage.CrossFadeAlpha(0.0f, 1.0f, false);
